@@ -42,10 +42,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Artifact
-      - run: |
+        run: |
           mkdir -p ~/new/artifact
           echo hello > ~/new/artifact/world.txt
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: 'Artifacts-V2'
           path: '~/new/**/*'
