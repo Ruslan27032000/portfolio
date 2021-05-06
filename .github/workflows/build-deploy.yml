@@ -41,15 +41,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-        - name: Create Artifact
-        - run: |
+      - name: Create Artifact
+      - run: |
           mkdir -p ~/new/artifact
           echo hello > ~/new/artifact/world.txt
-        - uses: actions/upload-artifact@v2
-          with:
-            name: 'Artifacts-V2'
-            path: '~/new/**/*'
+      - uses: actions/upload-artifact@v2
+        with:
+          name: 'Artifacts-V2'
+          path: '~/new/**/*'
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
